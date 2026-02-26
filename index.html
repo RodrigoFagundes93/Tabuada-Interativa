@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Funcoes Aninhadas</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Tabuada Interativa</h1>
+        <!-- input numero -->
+        <input type="text" placeholder="Digite um numero" required id="numero">
+
+        <div class="radio-container">
+            <!-- input radio -->
+            <label >
+            <input name="opreacao" type="radio" value="+" id="radios">
+                +
+            </label>
+
+            <label >
+            <input name="opreacao" type="radio" value="-" id="radios">
+                -
+            </label>
+            <label >
+            <input name="opreacao" type="radio" value="*" id="radios">
+                x
+            </label>
+            <label >
+            <input name="opreacao" type="radio" value="/" id="radios">
+                ÷
+            </label>
+        </div>
+        <div class="btn-container">
+        <button id="btnCalc">Calcular</button>
+        <button id="btnLimpar">Limpar</button>
+        </div>
+
+        
+    </div>
+      
+    
+        <output>
+            <h1> TABUADA DO NUMERO: <span id="titulo"></span></h1>
+            <ul id="tela">
+              <li></li>
+            </ul>
+        </output>
+    
+    <script src="script.js"></script>
+</body>
+</html>
