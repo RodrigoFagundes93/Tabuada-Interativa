@@ -70,7 +70,7 @@ body{
 
 }
 
-#btn{
+#btnCalc,#btnLimpar{
     border: none;
     padding: 1.5rem;
     font-size: 1.5rem;
@@ -79,8 +79,13 @@ body{
     cursor: pointer;
 }
 
-#btn:hover{
+#btnCalc:hover{
     background-color: hsl(230, 64%, 54%);
+    color: white;
+}
+
+#btnLimpar:hover{
+    background-color: hsl(0, 64%, 54%);
     color: white;
 }
 
