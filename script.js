@@ -71,9 +71,8 @@ function HandlerTabuada(){
         const tabuada = `${num1} ${operador} ${num2} = ${resultado}`
 
         renderizarLinha(tabuada);
-        numeroInput.value = ''
-        numeroInput.focus();
     }
+    titulo.innerHTML = `${num1}`;
 }
 
 btnCalcular.addEventListener('click', HandlerTabuada);
