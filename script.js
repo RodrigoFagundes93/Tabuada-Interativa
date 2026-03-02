@@ -8,59 +8,80 @@ const radios = document.querySelectorAll('#radios label input');
 const btnLimpar = document.getElementById('btnLimpar');
 const btnCalcular = document.getElementById('btnCalc');
 
+// MVC 
+// Model - somente calculos
 
-//Criar funcao para gerar tabuada - parametro numero e operador
-function gerarTabuada(){
-    
-    tela.textContent = "";
-    const numero = parseInt(numeroInput.value)
+function calcular(num1,num2,operadores){
+    switch (operadores){
+        case '+': return num1 + num2;
+        case '-': return num1 - num2;
+        case '*': return num1 * num2;
+        case '/': return num2 !==0? (num1 / num2).toFixed(2) : alert("[ERROR]");
+    }
+}
 
-    if(isNaN(numero)) {
-        alert('Digite um número válido!');
+// VIEW 
+
+function renderizarLinha(texto){
+    const li = document.createElement('li')
+
+    li.innerHTML = texto;
+    tela.appendChild(li);
+}
+
+// CONTROLLER - Handler
+
+function HandlerTabuada(){
+    // validacao rapida
+    if(numeroInput.value === ""){
+        tela.innerHTML = "Preencha os campos corretamente"
+        tela.style.color = 'red'
+
+        return
+    }
+    // transformar inputs em Number
+    const num1 = Number(numeroInput.value);
+    if(isNaN(num1)){ 
+        alert('Preencha Somente NUMEROS') ;
         return;
     }
-
-    // pegar operador selecionado
+    
+    //capturar o operador
     let operador;
-    for (const radio of radios) {
-        if (radio.checked) {
+    for(const radio of radios){
+        if(radio.checked){
             operador = radio.value;
             break;
         }
+
     }
 
-    if(!operador) {
-        alert('Selecione um operador!');
-        return;
-    }
-        let result;
-    // gerar tabuada
-    for (let i = 1; i <= 10; i++) {
+    if (!operador) { // undefined/vazia
+    tela.innerHTML = 'Selecione o Operador';
+    tela.style.color = 'red'
+    return; // 
+}
     
-        if (operador === '+') {
-            result = numero + i;
-        } if (operador === '-') {
-            result = numero - i;
-        } if (operador === '*') {
-            result = numero * i;
-        } if (operador === '/') {
-            result = (numero / i).toFixed(2);
-        }
-        titulo.textContent = `${numero}`
-        const li = document.createElement('li');
-        li.textContent = `${numero} ${operador} ${i} = ${result}`;
-        tela.appendChild(li);
-        numeroInput.value = ""; 
+     
+    tela.innerHTML = ''
+    for(let num2 = 1; num2 <= 10; num2++){
+       
+        const resultado = calcular(num1,num2,operador);
         
+        const tabuada = `${num1} ${operador} ${num2} = ${resultado}`
+
+        renderizarLinha(tabuada);
+        numeroInput.value = ''
+        numeroInput.focus();
     }
-
 }
 
-function limparTela(){
-    tela.textContent = "";
-    titulo.textContent = "";
-     numeroInput.value = ""; 
-}
+btnCalcular.addEventListener('click', HandlerTabuada);
 
-btnCalcular.addEventListener('click',gerarTabuada);
-btnLimpar.addEventListener('click', limparTela)
+btnLimpar.addEventListener('click', () =>{
+    tela.innerHTML = "";
+    numeroInput.value = ""
+    radios.forEach(radio => {
+        radio.checked = false;
+    });
+})
