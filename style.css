@@ -103,7 +103,6 @@ body{
     border-radius: 1rem;
     text-transform: uppercase;
     cursor: pointer;
-    background-color:  hsl(258, 52%, 85%);
     color:  hsl(258, 52%, 30%);
     font-weight: 600;
     font-family: 'FIRA SANS';
@@ -111,13 +110,21 @@ body{
     width: 120px;
 }
 
+#btnCalc{
+    background-color: hsl(24, 98%, 48%);
+    color:  hsl(258, 100%, 100%);
+
+}
+
 #btnCalc:hover{
-    background-color: hsl(230, 64%, 54%);
-    color: white;
+    color:  hsl(258, 52%, 85%);
+    background-color:  hsl(258, 52%, 30%);
+    
 }
 
 #btnLimpar:hover{
     background-color: hsl(24, 98%, 48%);
+
     color: white;
 }
 
