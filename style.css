@@ -12,7 +12,7 @@ html{
 body{
     height: 100vh;
     font-size: 3rem;
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 88%);
 
   
 }
@@ -26,22 +26,46 @@ body{
     padding: 3.6rem;
     background-color: hsl(0, 0%, 70%);
     border-radius: 1rem;
-  
+   background-color:  hsl(258, 52%, 40%);
+    position: relative;
+    box-shadow: 0 0 15px  hsla(258, 12%, 70%, 0.363);
+
+}
+
+.container::after{
+    content: '';
+    position: absolute;
+    width: 325px;
+    height: 1.4px;
+    background-color: hsl(258, 52%, 54%);
+    top: 81px;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 
 .container h1{
     font-size: 3rem;
-    color: hsl(0, 0%, 20%) ;
+    color: hsl(258, 52%, 85%) ;
+    text-align: center;
+    font-family: monospace;
+    
 }
 
 #numero{
     height: 5rem;
     padding-left: 2rem;
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     border-radius: 0.8rem;
     border: none;
-    outline: none;
+    font-family: Roboto;
+    font-weight: bold;
+    
+}
+
+#numero:focus{
+    outline: auto orange;
 }
 
 .radio-container{
@@ -58,6 +82,8 @@ body{
     align-items: center;
     text-transform: lowercase;
     font-size: 2.5rem;
+    color: hsl(258, 52%, 95%) ;
+
 
 }
 
@@ -77,6 +103,12 @@ body{
     border-radius: 1rem;
     text-transform: uppercase;
     cursor: pointer;
+    background-color:  hsl(258, 52%, 85%);
+    color:  hsl(258, 52%, 30%);
+    font-weight: 600;
+    font-family: 'FIRA SANS';
+    letter-spacing: 1.2px;
+    width: 120px;
 }
 
 #btnCalc:hover{
@@ -85,7 +117,7 @@ body{
 }
 
 #btnLimpar:hover{
-    background-color: hsl(0, 64%, 54%);
+    background-color: hsl(24, 98%, 48%);
     color: white;
 }
 
@@ -94,7 +126,7 @@ output{
     width: 400px;
     text-align: center;
     margin: 0 auto;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 89%);
     border-radius: 0.8rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 3rem;
