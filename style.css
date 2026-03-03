@@ -10,7 +10,9 @@ html{
 }
 
 body{
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh
+    width: 100vw
     font-size: 3rem;
     background-color: hsl(0, 0%, 88%);
 
